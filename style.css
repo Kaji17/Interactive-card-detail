@@ -1,0 +1,25 @@
+body {
+    margin: 0px;
+    background-image: url("images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.frontcard {
+    background-image: url("images/bg-card-front.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 447px;
+    height: 240px;
+    position: absolute;
+
+}
+
+.backcard {
+    background-image: url("images/bg-card-back.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 447px;
+    height: 240px;
+
+}
