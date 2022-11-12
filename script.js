@@ -10,12 +10,12 @@ cardNumber.innerText = addSpace(cardNumber.textContent);
 
 
 // Add Card Name when we complete input
-inputcardNameTitulaire.addEventListener("input", (e)=>{
+inputcardNameTitulaire.addEventListener("input", (e) => {
     let value = e.currentTarget.value;
     cardNameTitulaire.innerText = value.toUpperCase();
 
     // Add la valeur par défaut quand le champs est vide
-    if (value==="") {
+    if (value === "") {
         cardNameTitulaire.innerText = "Jane Appleseed";
     }
 })
