@@ -1,5 +1,9 @@
 var cardNumber = document.getElementById("cardNumber");
 var inputcardnumbertitulaire = document.getElementById("cardnumbertitulaire");
+var inputcardNameTitulaire = document.getElementById("nametitulaire");
+var cardNameTitulaire = document.getElementById("cardNameTitulaire");
+var inputExpmm= document.getElementById("expmm"); 
+var numberMonth = document.getElementById("numberMonth");
 
 //Add spcace after 4 caratère
 cardNumber.innerText = addSpace(cardNumber.textContent);
