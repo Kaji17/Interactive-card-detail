@@ -1,25 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    font-family: 'Space Grotesk', sans-serif;
+}
+
 body {
     margin: 0px;
     background-image: url("images/bg-main-desktop.png");
     background-repeat: no-repeat;
     background-size: auto;
+    font-size: 18px;
+    color: hsl(0, 0%, 100%);
 }
 
 .frontcard {
     background-image: url("images/bg-card-front.png");
     background-repeat: no-repeat;
     background-size: auto;
-    width: 447px;
-    height: 240px;
+    width: 27.9375rem;
+    height: 16rem;
     position: absolute;
-
+    right: 68%;
+    top: 18%;
+    display: flex;
+    transform: translate(35%, -21%);
+    flex-direction: column;
 }
+
+.frontcard__content {
+    padding: 1.5em;
+}
+
+#logofrontendcard {
+    width: min-content;
+}
+
+.frontcard__content p {
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 1.5rem;
+}
+
+.nameExpDateCard p {
+    font-size: 1.125rem;
+}
+
+.nameExpDateCard {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .backcard {
     background-image: url("images/bg-card-back.png");
     background-repeat: no-repeat;
     background-size: auto;
-    width: 447px;
-    height: 240px;
+    width: 27.9375rem;
+    height: 15rem;
+    position: absolute;
+    right: 50%;
+    bottom: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transform: translate(0%, -28%);
+}
 
+
+.backcard p {
+    margin-right: 3em;
+}
+
+.formcontent {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 76%;
+    top: 50%;
+    transform: translate(-70%, -50%);
+    font-weight: 700;
+    height: 23.4375rem;
+    color: hsl(278, 68%, 11%);
+}
+.formcontent--exp-cvc{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.formcontent--exp-cvc input{
+    margin-top: 0.5rem;
+}
+.formcontent__mmyy{
+    display: flex;
+    margin-right: 0.4rem;
+}
+
+.formcontent__mmyy input{
+    width: 5rem;
+    margin-right: 1rem;
+}
+input{
+    padding-left: 1rem;
+    border-width: thin;
+    color:hsl(278, 68%, 11%);
+    font-weight: 600;
+}
+
+input, button{
+    height: 2.875rem;
+    border-radius: 10px;
+}
+
+.formcontent--displaylab-input{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+button{
+    width: 100%;
+    color: white;
+    background-color: hsl(278, 68%, 11%);
+    font-size: inherit;
 }
