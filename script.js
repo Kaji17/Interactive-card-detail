@@ -23,4 +23,9 @@ function addZero(string = "", n) {
     return string + "0".repeat(n);
 }
 
+// Add space after 4 charater in string
+function addSpace(string) {
+    let joy = string.match(/.{1,4}/g);
+    return joy.join(' ');
+}
 
