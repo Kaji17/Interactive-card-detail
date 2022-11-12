@@ -123,3 +123,8 @@ button{
     background-color: hsl(278, 68%, 11%);
     font-size: inherit;
 }
+.formcontent--error{
+    margin: 0px;
+    font-size: small;
+    color: hsl(0, 100%, 66%);
+}
