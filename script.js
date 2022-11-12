@@ -76,6 +76,38 @@ inputcvc.addEventListener("input", (e)=>{
     }
 })
 
+
+btnconfirm.addEventListener("click", () => {
+
+    if (regexCardName.test(cardNameTitulaire.textContent) && regexCardNumber.test(cardNumber.textContent) &&
+        regexCardMMYY.test(numberMonth.textContent) &&
+        regexCardMMYY.test(numberYears.textContent) && regexCardCvc.test(numberCVC.textContent) && (inputExpmm.value != "") &&
+        (inputexpyy.value != "") && (inputcvc.value != "")
+    ) {
+        cardNumber.innerText= "0000 0000 0000 0000";
+        cardNameTitulaire.innerText= "Jane Appleseed";
+        numberMonth.innerText= "00";
+        numberYears.innerText= "00";
+        numberCVC.innerText= "000";
+        document.getElementById("formcontent").style.display = "none";
+    } 
+    if (regexCardName.test(cardNameTitulaire.textContent)==false|| (inputcardNameTitulaire.value=="")) {
+        addError("errorCardName", " Wrong format, text only " );
+    }
+    if (regexCardNumber.test(cardNumber.textContent)==false || (inputcardnumbertitulaire.value=="")) {
+        addError("errorCardNumber","Wrong format, numbers only" );
+    }
+    if (regexCardMMYY.test(numberMonth.textContent)==false || (inputExpmm.value=="")) {
+        addError("errorCardMM", "Can't be blank" );
+    }
+    if (regexCardMMYY.test(numberYears.textContent)==false|| (inputexpyy.value=="")) {
+        addError("errorCardMM", "Can't be blank" );
+    }
+    if (regexCardCvc.test(numberCVC.textContent)==false|| (inputcvc.value=="")) {
+        addError("errorCardCvc", "Can't be blank" );
+    }
+})
+
 // Add exact zero after value of input 
 function addZeroRigth(string = "", n) {
     return string + "0".repeat(n);
