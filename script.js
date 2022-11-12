@@ -8,6 +8,12 @@ var inputexpyy = document.getElementById("expyy");
 var numberYears = document.getElementById("numberYears");
 var numberCVC = document.getElementById("numberCVC");
 var inputcvc = document.getElementById("cvc");
+var btnconfirm = document.getElementById("btnconfirm");
+
+const regexCardName = new RegExp("[A-Za-z]");
+const regexCardNumber = new RegExp("1234 5678 9123 0000");
+const regexCardMMYY = new RegExp("[0-9]{1,2}");
+const regexCardCvc = new RegExp("[0-9]{3}");
 //Add spcace after 4 caratère
 cardNumber.innerText = addSpace(cardNumber.textContent);
 
