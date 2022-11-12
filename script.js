@@ -1,6 +1,10 @@
 var cardNumber = document.getElementById("cardNumber");
 var inputcardnumbertitulaire = document.getElementById("cardnumbertitulaire");
 
+//Add spcace after 4 caratère
+cardNumber.innerText = addSpace(cardNumber.textContent);
+
+
 inputcardnumbertitulaire.addEventListener("input", (e) => {
     //Recupere le caratère saisie
     let value = e.currentTarget.value;
@@ -14,7 +18,7 @@ inputcardnumbertitulaire.addEventListener("input", (e) => {
     // Nombre Exacte de à ajouter
     count = 16 - count;
     let val = addZero(value, count);
-    document.getElementById("cardNumber").innerText = val;
+    document.getElementById("cardNumber").innerText = addSpace(val);
 })
 
 
