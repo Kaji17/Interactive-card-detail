@@ -77,7 +77,8 @@ inputexpyy.addEventListener("input", (e) => {
 })
 
 // Add CVC when we complete input
-inputcvc.addEventListener("input", (e)=>{
+inputcvc.addEventListener("input", (e) => {
+    addError("errorCardCvc", "" );
     let value1 = e.currentTarget.value;
     numberCVC.innerText = value1;
     // Add la valeur par défaut quand le champs est vide
