@@ -4,7 +4,10 @@ var inputcardNameTitulaire = document.getElementById("nametitulaire");
 var cardNameTitulaire = document.getElementById("cardNameTitulaire");
 var inputExpmm = document.getElementById("expmm");
 var numberMonth = document.getElementById("numberMonth");
-
+var inputexpyy = document.getElementById("expyy");
+var numberYears = document.getElementById("numberYears");
+var numberCVC = document.getElementById("numberCVC");
+var inputcvc = document.getElementById("cvc");
 //Add spcace after 4 caratère
 cardNumber.innerText = addSpace(cardNumber.textContent);
 
@@ -37,6 +40,7 @@ inputcardnumbertitulaire.addEventListener("input", (e) => {
     document.getElementById("cardNumber").innerText = addSpace(val);
 })
 
+// Add month experation when we complete input
 inputExpmm.addEventListener("input", (e) => {
     let value1 = e.currentTarget.value;
     if (value1 <= 9) {
@@ -51,6 +55,26 @@ inputExpmm.addEventListener("input", (e) => {
     }
 })
 
+
+// Add Years experation when we complete input
+inputexpyy.addEventListener("input", (e)=>{
+    let value1 = e.currentTarget.value;
+    numberYears.innerText = value1;
+    // Add la valeur par défaut quand le champs est vide
+    if (value1 === "") {
+        numberYears.innerText = "00";
+    }
+})
+
+// Add CVC when we complete input
+inputcvc.addEventListener("input", (e)=>{
+    let value1 = e.currentTarget.value;
+    numberCVC.innerText = value1;
+    // Add la valeur par défaut quand le champs est vide
+    if (value1 === "") {
+        numberCVC.innerText = "000";
+    }
+})
 
 // Add exact zero after value of input 
 function addZeroRigth(string = "", n) {
