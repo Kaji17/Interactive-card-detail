@@ -57,6 +57,10 @@ function addZero(string = "", n) {
     return string + "0".repeat(n);
 }
 
+function addZeroLeft(int = 00) {
+    return "0" + int;
+}
+
 // Add space after 4 charater in string
 function addSpace(string) {
     let joy = string.match(/.{1,4}/g);
