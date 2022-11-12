@@ -2,7 +2,7 @@ var cardNumber = document.getElementById("cardNumber");
 var inputcardnumbertitulaire = document.getElementById("cardnumbertitulaire");
 var inputcardNameTitulaire = document.getElementById("nametitulaire");
 var cardNameTitulaire = document.getElementById("cardNameTitulaire");
-var inputExpmm= document.getElementById("expmm"); 
+var inputExpmm = document.getElementById("expmm");
 var numberMonth = document.getElementById("numberMonth");
 
 //Add spcace after 4 caratère
@@ -35,6 +35,20 @@ inputcardnumbertitulaire.addEventListener("input", (e) => {
     count = 16 - count;
     let val = addZeroRigth(value, count);
     document.getElementById("cardNumber").innerText = addSpace(val);
+})
+
+inputExpmm.addEventListener("input", (e) => {
+    let value1 = e.currentTarget.value;
+    if (value1 <= 9) {
+        numberMonth.innerText = addZeroLeft(value1);
+    } else {
+        numberMonth.innerText = value1;
+    }
+
+    // Add la valeur par défaut quand le champs est vide
+    if (value1 === "") {
+        numberMonth.innerText = "00";
+    }
 })
 
 
