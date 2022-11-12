@@ -53,7 +53,7 @@ inputExpmm.addEventListener("input", (e) => {
 
 
 // Add exact zero after value of input 
-function addZero(string = "", n) {
+function addZeroRigth(string = "", n) {
     return string + "0".repeat(n);
 }
 
