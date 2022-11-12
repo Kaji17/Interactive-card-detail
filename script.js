@@ -5,6 +5,18 @@ var inputcardnumbertitulaire = document.getElementById("cardnumbertitulaire");
 cardNumber.innerText = addSpace(cardNumber.textContent);
 
 
+// Add Card Name when we complete input
+inputcardNameTitulaire.addEventListener("input", (e)=>{
+    let value = e.currentTarget.value;
+    cardNameTitulaire.innerText = value.toUpperCase();
+
+    // Add la valeur par défaut quand le champs est vide
+    if (value==="") {
+        cardNameTitulaire.innerText = "Jane Appleseed";
+    }
+})
+
+// Add Card Number when we complete input
 inputcardnumbertitulaire.addEventListener("input", (e) => {
     //Recupere le caratère saisie
     let value = e.currentTarget.value;
