@@ -33,7 +33,7 @@ inputcardnumbertitulaire.addEventListener("input", (e) => {
 
     // Nombre Exacte de à ajouter
     count = 16 - count;
-    let val = addZero(value, count);
+    let val = addZeroRigth(value, count);
     document.getElementById("cardNumber").innerText = addSpace(val);
 })
 
