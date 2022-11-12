@@ -14,6 +14,7 @@ cardNumber.innerText = addSpace(cardNumber.textContent);
 
 // Add Card Name when we complete input
 inputcardNameTitulaire.addEventListener("input", (e) => {
+    addError("errorCardName", "");
     let value = e.currentTarget.value;
     cardNameTitulaire.innerText = value.toUpperCase();
 
@@ -25,6 +26,7 @@ inputcardNameTitulaire.addEventListener("input", (e) => {
 
 // Add Card Number when we complete input
 inputcardnumbertitulaire.addEventListener("input", (e) => {
+    addError("errorCardNumber", "");
     //Recupere le caratère saisie
     let value = e.currentTarget.value;
 
@@ -42,6 +44,7 @@ inputcardnumbertitulaire.addEventListener("input", (e) => {
 
 // Add month experation when we complete input
 inputExpmm.addEventListener("input", (e) => {
+    addError("errorCardMM", "" );
     let value1 = e.currentTarget.value;
     if (value1 <= 9) {
         numberMonth.innerText = addZeroLeft(value1);
@@ -57,7 +60,8 @@ inputExpmm.addEventListener("input", (e) => {
 
 
 // Add Years experation when we complete input
-inputexpyy.addEventListener("input", (e)=>{
+inputexpyy.addEventListener("input", (e) => {
+    addError("errorCardMM", "" );
     let value1 = e.currentTarget.value;
     numberYears.innerText = value1;
     // Add la valeur par défaut quand le champs est vide
