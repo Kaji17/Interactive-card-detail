@@ -123,3 +123,7 @@ function addSpace(string) {
     return joy.join(' ');
 }
 
+function addError(id, error) {
+    return document.getElementById(id).textContent= error;
+}
+
