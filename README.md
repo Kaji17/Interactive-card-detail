@@ -70,7 +70,7 @@ For improve my habilities
 ### Useful resources
 ## Author
 
-- Linkedin - [Katina](https://www.your-site.com)
+- Linkedin - [Katina](https://www.linkedin.com/in/katinaouattara/)
 - Frontend Mentor - [@Kaji17](https://www.frontendmentor.io/profile/Kaji17)
 - Twitter - [@pevirgile](https://www.twitter.com/pevirgile)
 
