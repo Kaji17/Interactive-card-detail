@@ -9,6 +9,7 @@ var numberYears = document.getElementById("numberYears");
 var numberCVC = document.getElementById("numberCVC");
 var inputcvc = document.getElementById("cvc");
 var btnconfirm = document.getElementById("btnconfirm");
+var btncontinue= document.getElementById("btncontinue");
 
 const regexCardName = new RegExp("[A-Za-z]");
 const regexCardNumber = new RegExp("1234 5678 9123 0000");
