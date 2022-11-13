@@ -81,6 +81,7 @@ body {
     font-weight: 700;
     height: 23.4375rem;
     color: hsl(278, 68%, 11%);
+    justify-content: center;
 }
 .formcontent--exp-cvc{
     display: flex;
