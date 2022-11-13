@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Space+Grotesk:wght@500&display=swap');
 
-*{
+* {
     font-family: 'Space Grotesk', sans-serif;
 }
 
@@ -16,7 +16,7 @@ body {
 .frontcard {
     background-image: url("images/bg-card-front.png");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: contain;
     width: 27.9375rem;
     height: 16rem;
     position: absolute;
@@ -28,7 +28,7 @@ body {
 }
 
 .frontcard__content {
-    padding: 1.5em;
+    padding: 4%;
 }
 
 #logofrontendcard {
@@ -54,7 +54,7 @@ body {
 .backcard {
     background-image: url("images/bg-card-back.png");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: contain;
     width: 27.9375rem;
     height: 15rem;
     position: absolute;
@@ -68,14 +68,16 @@ body {
 
 
 .backcard p {
-    margin-right: 3em;
+    width: 100%;
+    margin-right: 4rem;
+    text-align: right;
 }
 
 .formcontent {
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 76%;
+    left: 83%;
     top: 50%;
     transform: translate(-70%, -50%);
     font-weight: 700;
@@ -83,62 +85,129 @@ body {
     color: hsl(278, 68%, 11%);
     justify-content: center;
 }
-.formcontent--exp-cvc{
+
+.formcontent--exp-cvc {
     display: flex;
     margin-bottom: 2rem;
 }
-.formcontent--exp-cvc input{
+
+.formcontent--exp-cvc input {
     margin-top: 0.5rem;
 }
-.formcontent__mmyy{
+
+.formcontent__mmyy {
     display: flex;
     margin-right: 0.4rem;
 }
 
-.formcontent__mmyy input{
+.formcontent__mmyy input {
     width: 5rem;
     margin-right: 1rem;
 }
-input{
+
+input {
     padding-left: 1rem;
     border-width: thin;
-    color:hsl(278, 68%, 11%);
+    color: hsl(278, 68%, 11%);
     font-weight: 600;
 }
 
-input, button{
+input,
+button {
     height: 2.875rem;
     border-radius: 10px;
 }
 
-.formcontent--displaylab-input{
+.formcontent--displaylab-input {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
-button{
+button {
     width: 100%;
     color: white;
     background-color: hsl(278, 68%, 11%);
     font-size: inherit;
 }
-.formcontent--error{
+
+.formcontent--error {
     margin: 0px;
     font-size: small;
     color: hsl(0, 100%, 66%);
 }
-.completedContent{
+
+.completedContent {
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.completedContent p{
+
+.completedContent p {
     color: hsl(270, 3%, 87%);
     font-size: smaller;
 }
-.completedContent button{
+
+.completedContent button {
     width: 21rem;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        background-image: url("images/bg-main-mobile.png");
+        background-size: cover;
+    }
+
+    .formcontent {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 100%);
+    }
+
+    .frontcard {
+        width: 37rem;
+        height: 20rem;
+        position: absolute;
+        left: 50%;
+        top: 43%;
+        transform: translate(-50%, -21%);
+        z-index: 2;
+        background-size: contain;
+    }
+    .backcard p{
+        margin-right: 5rem;
+        margin-top: 0rem;
+    }
+
+    .backcard {
+        width: 37rem;
+        height: 20rem;
+        left: 57%;
+        top: 18%;
+        transform: translate(-53%, -28%);
+        z-index: 1;
+        background-size: contain;
+    }
+
+}
+@media screen and (max-width: 660px) {
+    .frontcard {
+        width: 86%;
+        height: 42%;
+    }
+    .backcard {
+        width: 86%;
+        height: 42%;
+    }
+    .backcard p{
+        margin-right: 5rem;
+    }
+}
+@media screen and (max-width: 594px) {
+    .backcard p{
+        margin-right: 3rem;
+        margin-bottom: 5rem
+    }
 }
