@@ -95,12 +95,8 @@ btnconfirm.addEventListener("click", () => {
         regexCardMMYY.test(numberYears.textContent) && regexCardCvc.test(numberCVC.textContent) && (inputExpmm.value != "") &&
         (inputexpyy.value != "") && (inputcvc.value != "")
     ) {
-        cardNumber.innerText= "0000 0000 0000 0000";
-        cardNameTitulaire.innerText= "Jane Appleseed";
-        numberMonth.innerText= "00";
-        numberYears.innerText= "00";
-        numberCVC.innerText= "000";
-        document.getElementById("formcontent").style.display = "none";
+        document.getElementById("myform").style.display = "none";
+        document.getElementById("completedContent").style.display= "flex";
     } 
     if (regexCardName.test(cardNameTitulaire.textContent)==false|| (inputcardNameTitulaire.value=="")) {
         addError("errorCardName", " Wrong format, text only " );
