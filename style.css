@@ -128,3 +128,16 @@ button{
     font-size: small;
     color: hsl(0, 100%, 66%);
 }
+.completedContent{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.completedContent p{
+    color: hsl(270, 3%, 87%);
+    font-size: smaller;
+}
+.completedContent button{
+    width: 21rem;
+}
