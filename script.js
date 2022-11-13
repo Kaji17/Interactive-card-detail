@@ -9,7 +9,7 @@ var numberYears = document.getElementById("numberYears");
 var numberCVC = document.getElementById("numberCVC");
 var inputcvc = document.getElementById("cvc");
 var btnconfirm = document.getElementById("btnconfirm");
-var btncontinue= document.getElementById("btncontinue");
+var btncontinue = document.getElementById("btncontinue");
 
 const regexCardName = new RegExp("[A-Za-z]");
 const regexCardNumber = new RegExp("1234 5678 9123 0000");
@@ -21,7 +21,7 @@ cardNumber.innerText = addSpace(cardNumber.textContent);
 
 // Add Card Name when we complete input
 inputcardNameTitulaire.addEventListener("input", (e) => {
-    addError("errorCardName", "");
+    removeError("errorCardName", "", "nametitulaire");
     let value = e.currentTarget.value;
     cardNameTitulaire.innerText = value.toUpperCase();
 
@@ -33,7 +33,7 @@ inputcardNameTitulaire.addEventListener("input", (e) => {
 
 // Add Card Number when we complete input
 inputcardnumbertitulaire.addEventListener("input", (e) => {
-    addError("errorCardNumber", "");
+    removeError("errorCardNumber", "", "cardnumbertitulaire");
     //Recupere le caratère saisie
     let value = e.currentTarget.value;
 
@@ -51,7 +51,7 @@ inputcardnumbertitulaire.addEventListener("input", (e) => {
 
 // Add month experation when we complete input
 inputExpmm.addEventListener("input", (e) => {
-    addError("errorCardMM", "" );
+    removeError("errorCardMM", "", "expmm");
     let value1 = e.currentTarget.value;
     if (value1 <= 9) {
         numberMonth.innerText = addZeroLeft(value1);
@@ -68,7 +68,7 @@ inputExpmm.addEventListener("input", (e) => {
 
 // Add Years experation when we complete input
 inputexpyy.addEventListener("input", (e) => {
-    addError("errorCardMM", "" );
+    removeError("errorCardMM", "", "expyy");
     let value1 = e.currentTarget.value;
     numberYears.innerText = value1;
     // Add la valeur par défaut quand le champs est vide
@@ -79,7 +79,7 @@ inputexpyy.addEventListener("input", (e) => {
 
 // Add CVC when we complete input
 inputcvc.addEventListener("input", (e) => {
-    addError("errorCardCvc", "" );
+    removeError("errorCardCvc", "", "cvc");
     let value1 = e.currentTarget.value;
     numberCVC.innerText = value1;
     // Add la valeur par défaut quand le champs est vide
@@ -97,43 +97,44 @@ btnconfirm.addEventListener("click", () => {
         (inputexpyy.value != "") && (inputcvc.value != "")
     ) {
         document.getElementById("myform").style.display = "none";
-        document.getElementById("completedContent").style.display= "flex";
-    } 
-    if (regexCardName.test(cardNameTitulaire.textContent)==false|| (inputcardNameTitulaire.value=="")) {
-        addError("errorCardName", " Wrong format, text only " );
+        document.getElementById("completedContent").style.display = "flex";
     }
-    if (regexCardNumber.test(cardNumber.textContent)==false || (inputcardnumbertitulaire.value=="")) {
-        addError("errorCardNumber","Wrong format, numbers only" );
+    if (regexCardName.test(cardNameTitulaire.textContent) == false || (inputcardNameTitulaire.value == "")) {
+        addError("errorCardName", " Wrong format, text only ", "nametitulaire");
+        // document.getElementById("nametitulaire").style.border= "1px solid hsl(0, 100%, 66%)";
     }
-    if (regexCardMMYY.test(numberMonth.textContent)==false || (inputExpmm.value=="")) {
-        addError("errorCardMM", "Can't be blank" );
+    if (regexCardNumber.test(cardNumber.textContent) == false || (inputcardnumbertitulaire.value == "")) {
+        addError("errorCardNumber", "Wrong format, numbers only", "cardnumbertitulaire");
     }
-    if (regexCardMMYY.test(numberYears.textContent)==false|| (inputexpyy.value=="")) {
-        addError("errorCardMM", "Can't be blank" );
+    if (regexCardMMYY.test(numberMonth.textContent) == false || (inputExpmm.value == "")) {
+        addError("errorCardMM", "Can't be blank", "expmm");
     }
-    if (regexCardCvc.test(numberCVC.textContent)==false|| (inputcvc.value=="")) {
-        addError("errorCardCvc", "Can't be blank" );
+    if (regexCardMMYY.test(numberYears.textContent) == false || (inputexpyy.value == "")) {
+        addError("errorCardMM", "Can't be blank", "expyy");
+    }
+    if (regexCardCvc.test(numberCVC.textContent) == false || (inputcvc.value == "")) {
+        addError("errorCardCvc", "Can't be blank", "cvc");
     }
 })
 
-btncontinue.addEventListener("click", ()=>{
-    document.getElementById("completedContent").style.display= "none";
+btncontinue.addEventListener("click", () => {
+    document.getElementById("completedContent").style.display = "none";
     document.getElementById("myform").style.display = "flex";
     document.getElementById("myform").style.flexDirection = "column"
-    inputcardnumbertitulaire.value= "";
-    inputcardNameTitulaire.value= "";
-    inputExpmm.value= "";
-    inputexpyy.value= "";
-    inputcvc.value= "";
-    addError("errorCardName", "");
-    addError("errorCardNumber", "");
-    addError("errorCardMM", "" );
-    addError("errorCardCvc", "" );
-    cardNameTitulaire.innerText= "Jane Appleseed";
-    cardNumber.innerText= "0000 0000 0000 0000";
-    numberMonth.innerText= "00";
-    numberYears.innerText= "00";
-    numberCVC.innerText= "000";
+    inputcardnumbertitulaire.value = "";
+    inputcardNameTitulaire.value = "";
+    inputExpmm.value = "";
+    inputexpyy.value = "";
+    inputcvc.value = "";
+    removeError("errorCardName", "", "nametitulaire" );
+    removeError("errorCardNumber", "", "cardnumbertitulaire");
+    removeError("errorCardMM", "",  "expmm");
+    removeError("errorCardCvc", "", "cvc");
+    cardNameTitulaire.innerText = "Jane Appleseed";
+    cardNumber.innerText = "0000 0000 0000 0000";
+    numberMonth.innerText = "00";
+    numberYears.innerText = "00";
+    numberCVC.innerText = "000";
 
 })
 
@@ -152,7 +153,13 @@ function addSpace(string) {
     return joy.join(' ');
 }
 
-function addError(id, error) {
-    return document.getElementById(id).textContent= error;
+function addError(id, error, inputid) {
+    document.getElementById(id).textContent = error;
+    document.getElementById(inputid).style.border = "1px solid hsl(0, 100%, 66%)";
+}
+
+function removeError(id,error, inputid) {
+    document.getElementById(id).textContent = error;
+    document.getElementById(inputid).style.border = "";
 }
 
