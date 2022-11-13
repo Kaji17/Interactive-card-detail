@@ -4,6 +4,15 @@
     font-family: 'Space Grotesk', sans-serif;
 }
 
+html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
 body {
     margin: 0px;
     background-image: url("images/bg-main-desktop.png");
@@ -11,6 +20,10 @@ body {
     background-size: auto;
     font-size: 18px;
     color: hsl(0, 0%, 100%);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
 }
 
 .frontcard {
@@ -18,13 +31,10 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     width: 27.9375rem;
-    height: 16rem;
-    position: absolute;
-    right: 68%;
-    top: 18%;
     display: flex;
-    transform: translate(35%, -21%);
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .frontcard__content {
@@ -57,13 +67,10 @@ body {
     background-size: contain;
     width: 27.9375rem;
     height: 15rem;
-    position: absolute;
-    right: 50%;
-    bottom: 0%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    transform: translate(0%, -28%);
+    margin-top: 3rem;
+    margin-left: 8rem;
 }
 
 
@@ -75,15 +82,8 @@ body {
 
 .formcontent {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 83%;
-    top: 50%;
-    transform: translate(-70%, -50%);
     font-weight: 700;
-    height: 23.4375rem;
     color: hsl(278, 68%, 11%);
-    justify-content: center;
 }
 
 .formcontent--exp-cvc {
@@ -154,60 +154,113 @@ button {
     width: 21rem;
 }
 
+.contentleft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.contentrigth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cvcdisplay {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-width: 1024px) {
+    html {
+        height: auto;
+    }
+
     body {
         background-image: url("images/bg-main-mobile.png");
-        background-size: cover;
+        flex-direction: column;
+        background-size: contain;
+        gap: 4rem;
     }
 
-    .formcontent {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, 100%);
+    .contentrigth {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60% 1% 2fr;
+        margin-top: 25%
+    }
+    .contentleft{
+        margin-bottom: 10rem;
     }
 
     .frontcard {
-        width: 37rem;
-        height: 20rem;
-        position: absolute;
-        left: 50%;
-        top: 43%;
-        transform: translate(-50%, -21%);
-        z-index: 2;
-        background-size: contain;
-    }
-    .backcard p{
-        margin-right: 5rem;
-        margin-top: 0rem;
+        order: 2;
+        margin-left: 17%;
     }
 
     .backcard {
-        width: 37rem;
-        height: 20rem;
-        left: 57%;
-        top: 18%;
-        transform: translate(-53%, -28%);
-        z-index: 1;
-        background-size: contain;
+        order: 1;
+        margin-left: 28%;
     }
-
 }
-@media screen and (max-width: 660px) {
+
+@media screen and (max-width: 624px) {
     .frontcard {
-        width: 86%;
-        height: 42%;
+        order: 2;
+        margin-left: 5%;
     }
+
     .backcard {
-        width: 86%;
-        height: 42%;
-    }
-    .backcard p{
-        margin-right: 5rem;
+        order: 1;
+        margin-left: 17%;
     }
 }
-@media screen and (max-width: 594px) {
-    .backcard p{
-        margin-right: 3rem;
-        margin-bottom: 5rem
+
+@media screen and (max-width: 541px) {
+    .frontcard {
+        order: 2;
+        margin-left: 5%;
+        max-width: 17.9375rem;
+        max-height: 9.8125rem;
+    }
+
+    .backcard {
+        order: 1;
+        margin-left: 17%;
+        max-width: 17.9375rem;
+        height: 9.8125rem;
+    }
+    .frontcard__content {
+        padding: 4%;
+        width: 93%;
+    }
+    .frontcard__content p{
+        font-size: medium;
+        margin-bottom: 0.25rem;
+    }
+    .formcontent{
+        width: 80%;
+        justify-content: center;
+    }
+    .formcontent--exp-cvc input{
+        width: 78%;
+    };
+    .completedContent button{
+        width: 121%;
+    }
+}
+@media screen and (max-width: 351px) {
+    .backcard{
+        margin-left: 7%;
+    }
+    .frontcard{
+        margin-left: 2%;
+    }
+}
+@media screen and (max-width: 281px) {
+    .backcard{
+        margin-left: 0%;
     }
 }
