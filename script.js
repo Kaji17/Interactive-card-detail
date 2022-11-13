@@ -119,6 +119,27 @@ btnconfirm.addEventListener("click", () => {
     }
 })
 
+btncontinue.addEventListener("click", ()=>{
+    document.getElementById("completedContent").style.display= "none";
+    document.getElementById("myform").style.display = "flex";
+    document.getElementById("myform").style.flexDirection = "column"
+    inputcardnumbertitulaire.value= "";
+    inputcardNameTitulaire.value= "";
+    inputExpmm.value= "";
+    inputexpyy.value= "";
+    inputcvc.value= "";
+    addError("errorCardName", "");
+    addError("errorCardNumber", "");
+    addError("errorCardMM", "" );
+    addError("errorCardCvc", "" );
+    cardNameTitulaire.innerText= "Jane Appleseed";
+    cardNumber.innerText= "0000 0000 0000 0000";
+    numberMonth.innerText= "00";
+    numberYears.innerText= "00";
+    numberCVC.innerText= "000";
+
+})
+
 // Add exact zero after value of input 
 function addZeroRigth(string = "", n) {
     return string + "0".repeat(n);
