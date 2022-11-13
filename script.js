@@ -70,7 +70,12 @@ inputExpmm.addEventListener("input", (e) => {
 inputexpyy.addEventListener("input", (e) => {
     removeError("errorCardMM", "", "expyy");
     let value1 = e.currentTarget.value;
-    numberYears.innerText = value1;
+
+    if (value1 <= 9) {
+        numberYears.innerText = addZeroLeft(value1);
+    } else {
+        numberYears.innerText = value1;
+    }
     // Add la valeur par défaut quand le champs est vide
     if (value1 === "") {
         numberYears.innerText = "00";
